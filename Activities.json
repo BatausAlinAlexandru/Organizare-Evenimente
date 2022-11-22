@@ -1,0 +1,11 @@
+{
+  "1": {
+    "py/object": "Objects.Entities.activity.Activity",
+    "id_entity": "1",
+    "name": "Bataus Alin-Alexandru",
+    "email": "bataus.alin.alexandru@anubis.ro",
+    "the_date": "17-05-2002",
+    "time": "23:36",
+    "desc": "M-am nascut"
+  }
+}
