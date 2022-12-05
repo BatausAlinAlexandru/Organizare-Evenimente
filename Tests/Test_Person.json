@@ -1,0 +1,14 @@
+{
+  "1": {
+    "py/object": "Objects.Entities.person.Person",
+    "id_entity": "1",
+    "name": "Bataus Alin-Alexandru",
+    "email": "bataus.alin.alexandru@anubis.ro"
+  },
+  "2": {
+    "py/object": "Objects.Entities.person.Person",
+    "id_entity": "2",
+    "name": "Testing",
+    "email": "lucas.hood@gmail.com"
+  }
+}

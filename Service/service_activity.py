@@ -33,15 +33,18 @@ class ActivityService:
             if i.get_id_entity() == id_event:
                 event = i
 
-        try:
+        # try:
+        if person is None or event is None:
+            raise ValueError("IDK")
+        else:
             add = Activity(id_activity, person.get_name(), person.get_email(), event.get_date(), event.get_time(),
                            event.get_desc())
             self.repo.create(add)
-            print(add)
-        except KeyError as e:
-            print(e)
-        except ValueError as e:
-            print(e)
+            # print(add)
+        # except KeyError as e:
+        #     raise e
+        # except ValueError as e:
+        #     print(e)
 
     def delete_activity(self, id_activity):
         vector = self.get_all_activities()

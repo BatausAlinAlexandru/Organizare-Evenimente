@@ -17,6 +17,8 @@ class ActivitiesUI:
             id_person = input("ID person: ")
             id_event = input("ID event: ")
             self.activities.add_activity_id_person_id_event(id_activity, id_person, id_event)
+        except KeyError as e:
+            print(e)
         except ValueError as e:
             print(e)
         pass

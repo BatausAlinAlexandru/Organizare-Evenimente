@@ -1,15 +1,10 @@
-def space(lenght):
-    vec = []
-    for i in range(50):
-        vec += " "
-    for i in range(lenght):
-        vec.pop()
+dictionar = {
+    '1': {"nume": "Bataus Alin-Alexandru", "email": "bataus.alin.alexandru@anubis.ro", 'data': 'ceva', 'ora': '11:23'},
+    '2': {"nume": "Paven Andrei", "email": "paven.andrei@anubis.ro", 'data': 'ceva', 'ora': '12:23'}
+}
 
-    string = ""
-    for i in vec:
-        string += i
-    return string
+new_dict = {}
 
-
-print("ID: 12", space(2), "NAME: Bataus Alin-Alexandru", space(21), "DESC: Nu stiu ce naiba sa pun aici dar merge" )
-print("ID: 234232", space(6), "NAME: PAVEN Andrei", space(12), "DESC: Nu stiu ce naiba sa pun aici dar merge" )
+for i in dictionar:
+    if not dictionar[i]['nume'] in new_dict:
+        new_dict[dictionar[i]['nume']] = 5

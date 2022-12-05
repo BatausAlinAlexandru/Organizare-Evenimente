@@ -7,8 +7,6 @@ from dataclasses import dataclass
 
 @dataclass
 class Activity(Events, Person):
-    persoane: list
-
     def space_string(self, lenght):
         vec = []
         for i in range(38):

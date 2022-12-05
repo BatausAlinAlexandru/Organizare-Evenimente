@@ -51,6 +51,7 @@ class PersonService:
         for i in vector:
             if i.get_id_entity() == the_id:
                 return i
+        return None
 
     def search_person_by_name(self, the_name):
         """ Search in json file the entity with the name specified. """
@@ -58,6 +59,7 @@ class PersonService:
         for i in vector:
             if i.get_name() == the_name:
                 return i
+        return None
 
     def search_person_by_email(self, email):
         """ Search in json file the entity with the email specified. """
@@ -65,3 +67,5 @@ class PersonService:
         for i in vector:
             if i.get_email() == email:
                 return i
+
+        return None

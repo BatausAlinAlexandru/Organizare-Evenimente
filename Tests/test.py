@@ -2,6 +2,7 @@ from Objects.Entities.person import Person
 from Objects.Entities.event import Events
 from Objects.Entities.activity import Activity
 
+
 def test():
     p = Person('1', 'Bataus Alin-Alexandru', 'bataus.alin.alexandru@anubis.ro')
     assert p.get_name() == 'Bataus Alin-Alexandru'
