@@ -24,4 +24,5 @@ class Activity(Events, Person):
                f"NAME: {self.name} {self.space_string(len(self.name))} " \
                f"EMAIL: {self.email} {self.space_string((len(self.email)))} " \
                f"DATE: {self.the_date} \t\t " \
-               f"TIME: {self.time} \t\t {self.desc}"
+               f"TIME: {self.time} \t\t " \
+               f"DESC: {self.desc}"

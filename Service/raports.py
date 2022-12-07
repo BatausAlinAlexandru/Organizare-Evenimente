@@ -106,19 +106,23 @@ class ServiceRaports:
                 persoanele[act.get_email()] += 1
 
         sorted_persoanele = sorted(persoanele.items(), key=lambda d: d[1], reverse=True)
-        print(sorted_persoanele)
-        for i in sorted_persoanele:
-            print(f"{self.__return_name_by_email(i[0])} participa la {i[1]} evenimente.")
+        # print(sorted_persoanele)
+        # for i in sorted_persoanele:
+        # print(f"{self.__return_name_by_email(i[0])} participa la {i[1]} evenimente.")
+        return sorted_persoanele
 
     def primele_20_la_suta(self):
         activitati = self.get_activities()
         persoanele = {}
         for act in activitati:
-            if not act.get_email() in persoanele:
-                persoanele[act.get_email()] = 1
+            if not act.get_desc() in persoanele:
+                persoanele[act.get_desc()] = 1
             else:
-                persoanele[act.get_email()] += 1
+                persoanele[act.get_desc()] += 1
 
         sorted_persoanele = sorted(persoanele.items(), key=lambda d: d[1], reverse=True)
-        for i in sorted_persoanele:
-            print(f"{self.__return_name_by_email(i[0])} participa la {i[1]} evenimente.")
+        cati_sa_afiseze = int(0.2 * len(sorted_persoanele))
+        new_list = []
+        for i in range(cati_sa_afiseze):
+            new_list.append(sorted_persoanele[i])
+        return new_list

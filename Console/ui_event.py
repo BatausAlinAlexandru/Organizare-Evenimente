@@ -1,5 +1,5 @@
 from Service.service_event import ServiceEvent
-from Objects.Entities.person import Person
+# from Objects.Entities.person import Person
 
 
 class EventUI:
@@ -43,6 +43,8 @@ class EventUI:
             new_date = input("Enter a new date (DD-MM-YYYY): ")
             new_time = input("Enter a new time (HH:MM): ")
             new_desc = input("Enter a new desc: ")
+            self.service.validate.time_validation(new_time)
+            self.service.validate.date_validation(new_date)
             self.service.modify_event(the_id, new_date, new_time, new_desc)
         except ValueError as e:
             print(e)

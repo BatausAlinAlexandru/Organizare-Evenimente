@@ -6,7 +6,6 @@ from Service.service_event import ServiceEvent
 from Objects.Validators.validator_person import Validatorperson
 from Objects.Validators.validator_event import ValidatorEvent
 
-
 from Objects.Entities.person import Person
 
 
@@ -23,7 +22,6 @@ def test_person():
     assert person_service.get_all()[0].get_id_entity() == '1'
     assert person_service.get_all()[0].get_name() == "Bataus Alin-Alexandru"
     assert person_service.get_all()[0].get_email() == 'bataus.alin.alexandru@anubis.ro'
-
 
 
 def test_event():

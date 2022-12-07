@@ -9,6 +9,7 @@ class RaportUI:
         print("""
         1. Afisare evenimente persoana
         2. Persoane care participa la cele mai multe evenimente
+        3. 20%
         x. EXIT
         """)
 
@@ -44,9 +45,15 @@ class RaportUI:
                 print(e)
 
     def persoane_care_participa_la_cele_mai_multe_evenimente(self):
-        self.service_raports.persoane_participante()
+        persoanele = self.service_raports.persoane_participante()
+        for i in persoanele:
+            print(f"{i[0]} participa la {i[1]} evenimente.")
 
-        pass
+    def primele_20_la_suta_ui(self):
+        persoanele = self.service_raports.primele_20_la_suta()
+        for i in persoanele:
+            print(f"Evenimentul {i[0]} are {i[1]} participanti.")
+
 
     def run(self):
         while True:
@@ -58,6 +65,8 @@ class RaportUI:
                 self.lista_evenimente_la_care_participa_o_persona()
             elif cmd == '2':
                 self.persoane_care_participa_la_cele_mai_multe_evenimente()
+            elif cmd == '3':
+                self.primele_20_la_suta_ui()
             elif cmd == 'x' or cmd == 'X':
                 break
 

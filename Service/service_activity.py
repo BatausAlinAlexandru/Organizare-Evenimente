@@ -21,6 +21,7 @@ class ActivityService:
         return self.service_event.get_all()
 
     def add_activity_id_person_id_event(self, id_activity, id_person, id_event):
+        """ Adaugam o activitate """
         person = None
         event = None
         persons = self.get_all_persons()
@@ -40,13 +41,9 @@ class ActivityService:
             add = Activity(id_activity, person.get_name(), person.get_email(), event.get_date(), event.get_time(),
                            event.get_desc())
             self.repo.create(add)
-            # print(add)
-        # except KeyError as e:
-        #     raise e
-        # except ValueError as e:
-        #     print(e)
 
     def delete_activity(self, id_activity):
+        """ Stergem activitatea care are un id specific ( dat de noi )"""
         vector = self.get_all_activities()
         deleted = 0
         for i in vector:
@@ -55,4 +52,3 @@ class ActivityService:
                 deleted = 1
         if not deleted:
             raise KeyError("ID was not found")
-

@@ -18,29 +18,34 @@ from Console.ui_activity import ActivitiesUI
 import Tests.test
 import Tests.test_services
 
-# Validations
-validate_event = ValidatorEvent()
-validate_person = Validatorperson()
+def all():
+
+    # Validations
+    validate_event = ValidatorEvent()
+    validate_person = Validatorperson()
 
 
-# Repo
-repo_event = JsonRepository("Events.json")
-repo_person = JsonRepository("Persons.json")
-repo_activities = JsonRepository("Activities.json")
+    # Repo
+    repo_event = JsonRepository("Events.json")
+    repo_person = JsonRepository("Persons.json")
+    repo_activities = JsonRepository("Activities.json")
 
-# Service
-service_event = ServiceEvent(repo_event, validate_event)
-service_person = PersonService(repo_person, validate_person)
-service_raports = ServiceRaports(repo_event, repo_person, repo_activities)
-service_activity = ActivityService(repo_activities, service_person, service_event)
+    # Service
+    service_event = ServiceEvent(repo_event, validate_event)
+    service_person = PersonService(repo_person, validate_person)
+    service_raports = ServiceRaports(repo_event, repo_person, repo_activities)
+    service_activity = ActivityService(repo_activities, service_person, service_event)
 
-# Console
-ui_event = EventUI(service_event)
-ui_person = PersonUI(service_person)
-ui_raports = RaportUI(service_raports)
-ui_activities = ActivitiesUI(repo_activities, service_activity)
+    # Console
+    ui_event = EventUI(service_event)
+    ui_person = PersonUI(service_person)
+    ui_raports = RaportUI(service_raports)
+    ui_activities = ActivitiesUI(repo_activities, service_activity)
 
-menu = Menu(ui_person, ui_event, ui_activities, ui_raports)
+    menu = Menu(ui_person, ui_event, ui_activities, ui_raports)
 
-# RUN MENU
-menu.run_ui()
+    # RUN MENU
+    menu.run_ui()
+
+if __name__ == '__main__':
+    all()
